@@ -1,0 +1,23 @@
+"synclient TouchpadOff=$(synclient -l | grep -c 'TouchpadOff.*=.*0')"
+    m:0x40 + c:28
+    Mod4 + t
+
+"amixer -c 0 set Master 5%-"
+    m:0x0 + c:122
+    XF86AudioLowerVolume
+
+"amixer -c 0 set Master 5%+"
+    m:0x0 + c:123
+    XF86AudioRaiseVolume
+
+"$(amixer -c0 get Master | grep off > /dev/null && amixer -c0 -q set Master unmute) || amixer -q set Master mute"
+    m:0x0 + c:121
+    XF86AudioMute
+
+"~/dotfiles/bin/brightness -5"
+    m:0x0 + c:232
+    XF86MonBrightnessDown
+
+"~/dotfiles/bin/brightness 5"
+    m:0x0 + c:233
+    XF86MonBrightnessUp 

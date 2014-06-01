@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+# Express screen brightness as a percentage
+#
+
+
+dev=/sys/class/backlight/acpi_video0
+
+bri=`cat $dev/brightness`
+max=`cat $dev/max_brightness`
+
+
+if [ "x$1" == "x" ]; then
+	echo "$bri * 100 / $max" | bc
+	exit
+fi
+
+echo "$bri + $1" |bc |sudo tee $dev/brightness 
