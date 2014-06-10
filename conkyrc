@@ -13,7 +13,10 @@ cpu_avg_samples 1
 
 TEXT
 [
-	{ "full_text" : " ⚡ ${battery_percent BAT0}% ${battery_time BAT0}", "color" : "\#cccc00" },
+	{ "full_text" : "${if_match ${battery_percent}>87}  ${else}\
+${if_match ${battery_percent}>62}  ${else}\
+${if_match ${battery_percent}>37}  ${else}\
+  ${endif}${endif}${endif}${battery_percent BAT0}% ${battery_time BAT0}", "color" : "\#cccc00" },
 	${if_up wlp1s0}{ "full_text" : "  ${wireless_essid wlp1s0} ","color" : "\#33CC99"},
 	{ "full_text" : "  ${mem} " , "color" : "\#268bd2" },
 	{ "full_text" : "  ${fs_free /} ", "color":"\#b58900"},
@@ -23,6 +26,6 @@ TEXT
 	{ "full_text" : "  ${freq_g 2}GHz ${execi 10 sensors | grep 'Core 1' | awk '{print $3}' | grep -o -E '[0-9]+' | head -n 1}°C ","color":"\#d268bd"},
 	{ "full_text" : "  100% ","color":"\#d268ff"},
 	{ "full_text" : "  ${execi 10 $HOME/dotfiles/bin/brightness}% ","color":"\#d268ff"},
-	{ "full_text" : "  US ","color":"\#d268ff"},
-	{ "full_text" : "  ${time %a %d/%m/%y} ${time %H:%M} " , "color" : "\#2fdc56" }
+	{ "full_text" : "  ${exec setxkbmap -query | grep layout| sed 's/layout: *//'} ","color":"\#d268ff"},
+	{ "full_text" : "  ${time %H:%M} " , "color" : "\#2fdc56" }
 ],
