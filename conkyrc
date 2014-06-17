@@ -24,8 +24,8 @@ ${if_match ${battery_percent}>37}  ${else}\
 	{ "full_text" : "  cpu ${cpu cpu0}% ", "color":"\#00a9b5"},
 	{ "full_text" : "  ${freq_g 1}GHz ${execi 10 sensors | grep 'Core 0' | awk '{print $3}' | grep -o -E '[0-9]+' | head -n 1}°C ","color":"\#cc5555"},
 	{ "full_text" : "  ${freq_g 2}GHz ${execi 10 sensors | grep 'Core 1' | awk '{print $3}' | grep -o -E '[0-9]+' | head -n 1}°C ","color":"\#d268bd"},
-	{ "full_text" : "  100% ","color":"\#d268ff"},
+	{ "full_text" : "  ${exec $HOME/dotfiles/bin/volume}","color":"\#d268ff"},
 	{ "full_text" : "  ${execi 10 $HOME/dotfiles/bin/brightness}% ","color":"\#d268ff"},
-	{ "full_text" : "  ${exec setxkbmap -query | grep layout| sed 's/layout: *//'} ","color":"\#d268ff"},
-	{ "full_text" : "  ${time %H:%M} " , "color" : "\#2fdc56" }
+	{ "full_text" : "  ${exec setxkbmap -query | grep layout| sed 's/layout: *//'}","color":"\#d268ff"},
+	{ "full_text" : "  ${time %Y-%m-%d} ${time %H:%M} " , "color" : "\#2fdc56" }
 ],

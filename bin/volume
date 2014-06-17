@@ -1,0 +1,3 @@
+#!/bin/bash
+(amixer get Master |tail -n1 |grep -q off && echo Muted) || awk -F"[][]" '/dB/ { print $2 }' <(amixer sget Master)
+
