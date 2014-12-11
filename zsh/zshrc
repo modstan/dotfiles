@@ -1,0 +1,25 @@
+# Load Antigen
+source ~/dotfiles/zsh/antigen/antigen.zsh
+
+# Ensure editor is set
+export EDITOR=vim
+
+antigen bundle jdavis/zsh-files
+
+## Antigen Theme
+#antigen theme robbyrussell/oh-my-zsh themes/kennethreitz
+antigen theme jdavis/zsh-files themes/jdavis
+
+# For SSH, starting ssh-agent is annoying
+antigen bundle ssh-agent
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle rupa/z
+antigen bundle docker
+antigen bundle archlinux
+
+#zsh promt
+export PROMPT='%{$fg[cyan]%}[%{$fg[white]%} %n@%m %{$fg[cyan]%}] [%{$fg[white]%}%~%{$fg[cyan]%}] >%{$reset_color%} '
+
+antigen apply
+
+unset GREP_OPTIONS

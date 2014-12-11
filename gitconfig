@@ -1,0 +1,37 @@
+[color]
+        branch = auto
+        diff = auto
+        status = auto
+        ui = true
+
+[user]
+        name = Modestas Stankus
+        email = stankus.modestas@gmail.com.com
+
+[alias]
+        st = status
+        co = checkout
+        wc = whatchanged -p
+        wr = whatchanged -p --reverse
+        commit = commit -s
+        cs = commit -s
+        br = branch
+        serve = daemon --reuseaddr --base-path=. --export-all ./.git
+        commit = commit -s
+        np = log origin/master..master
+        hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+        ignored = status --ignored
+        commited-ignored = !git ls-files -i --exclude-standard
+        cherry-pick =  cherry-pick -x
+[giggle]
+        main-window-maximized = true
+        main-window-geometry = 0x0+0+0
+        history-view-vpane-position = 685
+        main-window-view = HistoryView
+        file-view-vpane-position = 314
+        file-view-hpane-position = 271
+[github]
+        user = modstan
+        token = 422cd00e8cfb396e9b08337c967511b0
+[push]
+        default = matching
