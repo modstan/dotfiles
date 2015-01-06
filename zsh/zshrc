@@ -16,6 +16,9 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle rupa/z
 antigen bundle docker
 antigen bundle archlinux
+antigen bundle tmux
+antigen bundle adb
+antigen bundle systemd
 
 #zsh promt
 export PROMPT='%{$fg[cyan]%}[%{$fg[white]%} %n@%m %{$fg[cyan]%}] [%{$fg[white]%}%~%{$fg[cyan]%}] >%{$reset_color%} '
