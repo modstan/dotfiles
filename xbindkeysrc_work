@@ -1,0 +1,51 @@
+"synclient TouchpadOff=$(synclient -l | grep -c 'TouchpadOff.*=.*0')"
+    m:0x40 + c:28
+    Mod4 + t
+
+"amixer set Master 2%- unmute -q"
+    m:0x0 + c:122
+    XF86AudioLowerVolume
+
+"amixer set Master 2%+ unmute -q"
+    m:0x0 + c:123
+    XF86AudioRaiseVolume
+
+"amixer set Master toggle -q"
+    m:0x0 + c:121
+    XF86AudioMute
+
+"~/dotfiles/bin/brightness -5"
+    m:0x0 + c:232
+    XF86MonBrightnessDown
+
+"~/dotfiles/bin/brightness 5"
+    m:0x0 + c:233
+    XF86MonBrightnessUp 
+
+"setxkbmap -query | grep layout |grep -q us && setxkbmap lt || setxkbmap us"
+    m:0xc + c:45
+    Control+Alt + k
+
+"/usr/bin/chromium"
+    m:0x40 + c:56
+    Mod4 + b
+
+"/usr/bin/thunderbird"
+    m:0x40 + c:58
+    Mod4 + m
+
+"kcalc"
+    m:0x50 + c:54
+    Mod2+Mod4 + c
+
+"wireshark"
+    m:0x40 + c:33
+    Mod4 + p
+
+"amixer -c 0 set Speaker Front 2%-"
+    m:0x0 + c:179
+    XF86Tools
+
+"amixer -c 0 set Speaker Front 2%+"
+    m:0x0 + c:172
+    XF86AudioPlay
