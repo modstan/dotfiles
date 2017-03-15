@@ -23,7 +23,7 @@ def change_screen():
 
 def workspace_change(num):
     num = int(num)
-    if get_focused_screen() != "HDMI2":
+    if get_focused_screen() != "HDMI-0":
         num = num + 5
     i3.workspace(str(num))
 

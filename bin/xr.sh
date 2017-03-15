@@ -20,6 +20,6 @@
 #senas monikas
 #xrandr --output HDMI2 --mode 1920x1200 --pos 0x0 --rotate normal --primary --output HDMI1 --mode 1680x1050 --left-of HDMI2
 #naujas monikas
-xrandr --output HDMI2 --mode 1920x1200 --pos 0x0 --rotate normal --primary --output HDMI1 --mode 1920x1200 --left-of HDMI2
+xrandr --output HDMI-0 --mode 1920x1200 --pos 0x0 --rotate normal --primary --output DVI-0 --mode 1920x1200 --left-of HDMI-0
 #naujas + persuktas
 #xrandr --output HDMI2 --mode 1920x1200 --pos 0x0 --rotate left --primary --output HDMI1 --mode 1920x1200 --left-of HDMI2
