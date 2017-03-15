@@ -1,0 +1,23 @@
+alias ktag="make cscope tags -j2 ARCH=mips"
+alias vi="vim"
+
+alias low='ionice -n3 nice -n18'
+
+export LESS_TERMCAP_mb=$(printf "\e[1;37m")
+export LESS_TERMCAP_md=$(printf "\e[1;37m")
+export LESS_TERMCAP_me=$(printf "\e[0m")
+export LESS_TERMCAP_se=$(printf "\e[0m")
+export LESS_TERMCAP_so=$(printf "\e[1;47;30m")
+export LESS_TERMCAP_ue=$(printf "\e[0m")
+export LESS_TERMCAP_us=$(printf "\e[0;36m")
+
+#show .gitignored files
+alias gnore='git ls-files --others --exclude-from=.git/info/exclude'
+alias p='sshpass -p admin01 '
+alias g='git'
+alias orai='curl wttr.in/kaunas'
+alias cryptousbstart='sudo cryptsetup open /dev/sdf1 xxx && sudo mount /dev/mapper/xxx  /mnt/crypto'
+alias cryptousbstop='sudo umount /mnt/crypto && sudo cryptsetup close xxx'
+alias h2d='= "ibase=16; obase=A;"'
+alias d2h='= "ibase=A; obase=16;"'
+

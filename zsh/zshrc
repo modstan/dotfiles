@@ -3,12 +3,12 @@ source ~/dotfiles/zsh/antigen/antigen.zsh
 
 # Ensure editor is set
 export EDITOR=vim
-
 antigen bundle jdavis/zsh-files
 
 ## Antigen Theme
 #antigen theme robbyrussell/oh-my-zsh themes/kennethreitz
-antigen theme jdavis/zsh-files themes/jdavis
+#antigen theme jdavis/zsh-files themes/jdavis
+antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 
 # For SSH, starting ssh-agent is annoying
 antigen bundle ssh-agent
@@ -19,10 +19,18 @@ antigen bundle archlinux
 antigen bundle tmux
 antigen bundle adb
 antigen bundle systemd
+antigen bundle voronkovich/gitignore.plugin.zsh
+
 
 #zsh promt
-export PROMPT='%{$fg[cyan]%}[%{$fg[white]%} %n@%m %{$fg[cyan]%}] [%{$fg[white]%}%~%{$fg[cyan]%}] >%{$reset_color%} '
+#export PROMPT='%{$fg[cyan]%}[%{$fg[white]%} %n@%m %{$fg[cyan]%}] [%{$fg[white]%}%~%{$fg[cyan]%}] >%{$reset_color%} '
 
 antigen apply
 
+#ssh-agent use dsa
+zstyle :omz:plugins:ssh-agent identities id_dsa
+
 unset GREP_OPTIONS
+
+mini() { minicom -w -c on -D /dev/ttyUSB$1 -C /tmp/log_for_usb$1 }
+source ~/dotfiles/zsh/zsh_alias
