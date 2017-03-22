@@ -3,10 +3,12 @@ source ~/dotfiles/zsh/antigen/antigen.zsh
 
 # Ensure editor is set
 export EDITOR=vim
-antigen bundle jdavis/zsh-files
+export TERM="xterm-256color"
+#ntigen bundle jdavis/zsh-files
+antigen use oh-my-zsh
 
 ## Antigen Theme
-#antigen theme robbyrussell/oh-my-zsh themes/kennethreitz
+#antigen theme robbyrussell/oh-my-zsh themes/clean
 #antigen theme jdavis/zsh-files themes/jdavis
 antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 
@@ -14,12 +16,13 @@ antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-
 antigen bundle ssh-agent
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle rupa/z
-antigen bundle docker
+#antigen bundle docker
 antigen bundle archlinux
 antigen bundle tmux
 antigen bundle adb
 antigen bundle systemd
 antigen bundle voronkovich/gitignore.plugin.zsh
+antigen-bundle Tarrasch/zsh-autoenv
 
 
 #zsh promt
@@ -30,7 +33,14 @@ antigen apply
 #ssh-agent use dsa
 zstyle :omz:plugins:ssh-agent identities id_dsa
 
-unset GREP_OPTIONS
+BULLETTRAIN_PROMPT_ORDER=(
+  time
+  status
+  custom
+  context
+  dir
+  git
+)
 
 mini() { minicom -w -c on -D /dev/ttyUSB$1 -C /tmp/log_for_usb$1 }
 source ~/dotfiles/zsh/zsh_alias
