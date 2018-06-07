@@ -3,7 +3,8 @@ source ~/dotfiles/zsh/antigen/antigen.zsh
 
 # Ensure editor is set
 export EDITOR=vim
-export TERM="xterm-256color"
+[[ $TMUX = "" ]] && export TERM="xterm-256color" || export TERM="tmux-256color"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin/:$HOME/bin:/opt/android-sdk/platform-tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 #ntigen bundle jdavis/zsh-files
 antigen use oh-my-zsh
 
@@ -16,13 +17,13 @@ antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-
 antigen bundle ssh-agent
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle rupa/z
-#antigen bundle docker
+antigen bundle docker
 antigen bundle archlinux
 antigen bundle tmux
 antigen bundle adb
 antigen bundle systemd
 antigen bundle voronkovich/gitignore.plugin.zsh
-antigen-bundle Tarrasch/zsh-autoenv
+antigen bundle Tarrasch/zsh-autoenv
 
 
 #zsh promt
@@ -42,5 +43,6 @@ BULLETTRAIN_PROMPT_ORDER=(
   git
 )
 
-mini() { minicom -w -c on -D /dev/ttyUSB$1 -C /tmp/log_for_usb$1 }
+ab() { adb backup -f $1.bk $1 }
 source ~/dotfiles/zsh/zsh_alias
+source ~/dotfiles/zsh/zsh_fzf
