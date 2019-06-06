@@ -11,7 +11,9 @@ antigen use oh-my-zsh
 ## Antigen Theme
 #antigen theme robbyrussell/oh-my-zsh themes/clean
 #antigen theme jdavis/zsh-files themes/jdavis
-antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+#antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+#antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+antigen theme romkatv/powerlevel10k powerlevel10k
 
 # For SSH, starting ssh-agent is annoying
 antigen bundle ssh-agent
@@ -24,6 +26,7 @@ antigen bundle adb
 antigen bundle systemd
 antigen bundle voronkovich/gitignore.plugin.zsh
 antigen bundle Tarrasch/zsh-autoenv
+antigen bundle wfxr/forgit
 
 
 #zsh promt
@@ -34,14 +37,18 @@ antigen apply
 #ssh-agent use dsa
 zstyle :omz:plugins:ssh-agent identities id_dsa
 
-BULLETTRAIN_PROMPT_ORDER=(
-  time
-  status
-  custom
-  context
-  dir
-  git
-)
+#BULLETTRAIN_PROMPT_ORDER=(
+#  time
+#  status
+#  custom
+#  context
+#  dir
+#  git
+#)
+
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs newline)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(load status background_jobs time)
 
 ab() { adb backup -f $1.bk $1 }
 source ~/dotfiles/zsh/zsh_alias
