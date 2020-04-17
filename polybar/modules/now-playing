@@ -1,0 +1,5 @@
+[module/now-playing]
+type = custom/script
+exec = playerctl metadata --format "~ {{ artist }} - {{ title }} ~"
+interval = 10
+label-font = 5
