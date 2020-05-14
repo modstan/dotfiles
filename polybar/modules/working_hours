@@ -1,0 +1,4 @@
+[module/working_hours]
+type = custom/script
+exec = ~/dotfiles/polybar/scripts/working_hours.py
+interval = 60

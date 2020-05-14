@@ -1,0 +1,2 @@
+#!/bin/sh
+setxkbmap -query | grep layout |grep -q us && setxkbmap lt || setxkbmap us

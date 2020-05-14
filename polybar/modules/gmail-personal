@@ -1,0 +1,6 @@
+[module/gmail-personal]
+type = custom/script
+exec = ~/dotfiles/polybar/scripts/polybar-gmail-master/launch.py 
+tail = true
+click-left = xdg-open https://mail.google.com
+interval = 30

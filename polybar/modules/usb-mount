@@ -1,0 +1,6 @@
+[module/system-usb-mount]
+type = custom/script
+exec = ~/dotfiles/polybar/scripts/system-usb-mount.sh
+interval = 10
+click-left = ~/dotfiles/polybar/scripts/system-usb-mount.sh --mount &
+click-right =  ~/dotfiles/polybar/scripts/system-usb-mount.sh --unmount &

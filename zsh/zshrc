@@ -1,5 +1,5 @@
 # Load Antigen
-source ~/dotfiles/zsh/antigen/antigen.zsh
+source ~/dotfiles/zsh/antigen/bin/antigen.zsh
 
 # Ensure editor is set
 export EDITOR=vim
@@ -46,10 +46,17 @@ zstyle :omz:plugins:ssh-agent identities id_dsa
 #  git
 #)
 
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs newline)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(load status background_jobs time)
+#POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context vcs newline)
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(load status background_jobs time)
 
 ab() { adb backup -f $1.bk $1 }
 source ~/dotfiles/zsh/zsh_alias
 source ~/dotfiles/zsh/zsh_fzf
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+
+# Run tmux automatically on zsh lunch
+#if [ "$TMUX" = "" ]; then tmux; fi
