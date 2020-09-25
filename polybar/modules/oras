@@ -1,0 +1,4 @@
+[module/oras]
+type = custom/script
+exec = curl -s "wttr.in/Kaunas?format=%c+%t(F:%f)+D:%h+%w+%m+%p+%o+%P" 
+interval = 600

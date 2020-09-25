@@ -14,6 +14,7 @@ include-file = /home/$USER/dotfiles/polybar/modules/temp
 include-file = /home/$USER/dotfiles/polybar/modules/working_hours
 include-file = /home/$USER/dotfiles/polybar/modules/usb-mount
 include-file = /home/$USER/dotfiles/polybar/modules/gmail-personal
+include-file = /home/$USER/dotfiles/polybar/modules/oras
 include-file = /home/$USER/dotfiles/polybar/modules/monitor-hdmi2
 include-file = /home/$USER/dotfiles/polybar/modules/monitor-hdmi1
 

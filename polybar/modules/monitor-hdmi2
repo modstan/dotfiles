@@ -32,7 +32,7 @@ font-4 = Font Awesome:size=12;1
 
 modules-left = i3 gmail-personal
 modules-center = working_hours alsa now-playing
-modules-right = filesystem xkeyboard memory cpu system-usb-mount date
+modules-right = xkeyboard system-usb-mount date
 
 tray-position = right
 tray-padding = 2
