@@ -1,6 +1,5 @@
-alias ktag="make cscope tags -j8 ARCH=mips"
+alias ktag="make cscope tags -j99 ARCH=arm64"
 alias vi="vim"
-
 alias low='ionice -n3 nice -n18'
 
 export LESS_TERMCAP_mb=$(printf "\e[1;37m")
@@ -18,17 +17,14 @@ alias g='git'
 alias orai='curl wttr.in/kaunas'
 alias cryptousbstart='sudo cryptsetup open /dev/sdf1 xxx && sudo mount /dev/mapper/xxx  /mnt/crypto'
 alias cryptousbstop='sudo umount /mnt/crypto && sudo cryptsetup close xxx'
-alias patch-format='git format-patch -1'
-alias patch-test='patch -p1 --dry-run'
-alias patch-force='patch -p1 -f'
+alias patch-test='patch -p0 --dry-run'
+alias patch-force='patch -p0 -f'
 alias gd='git diff'
 alias gb='git checkout $(git branch | fzf-tmux -d 15)'
+alias gf='git format-patch -1 '
+alias gs='git show '
+alias ga='git am -s -3 '
 alias codecheck='checkpatch.pl --no-tree --max-line-length=120 -f --terse --color=auto'
-
-lb() {
-	docker run --rm -it --name $RANDOM -v $(pwd):/build -u $(id -u):$(id -g) ligobuilder $@
-}
-
-fwupdate() {
-	scp $1 admin@$2:/tmp/fwupdate.bin && ssh admin@$2 fwupdate
-}
+alias ip='ip -c'
+alias wrt='docker run --rm -it -v $PWD:/home/builder/project -v ~/.gitconfig:/home/builder/.gitconfig qsdk-builder-v5 '
+alias pepbuild='buildlab make -j6 build.d '
