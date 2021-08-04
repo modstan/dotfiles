@@ -6,7 +6,7 @@ import os
 from datetime import datetime
 from datetime import date
 
-filename = "/tmp/%s.file" % date.today()
+filename = "~/working_hours/%s.file" % date.today()
 
 def working_hours(data):
     total_time = 0
@@ -16,7 +16,8 @@ def working_hours(data):
         delta = i["ts"] - last_time
         #print("d: %s ls: %s lt %s cs %s ct %s delta: %f" % (datetime.fromtimestamp(i["ts"]), last_state, last_time, i["state"], i["ts"], delta))
         if  i["state"] == last_state and i["state"] == "unlocked":
-            total_time = total_time + delta 
+            if delta < 500:
+                total_time = total_time + delta
             last_time = i["ts"]
         elif i["state"] == last_state and i["state"] == "locked":
             last_time = i["ts"]
@@ -25,9 +26,11 @@ def working_hours(data):
             last_time = i["ts"]
             last_state = i["state"]
             #print("here need to redute total_time by 5 min")
+            total_time = total_time - 300
             pass
         elif i["state"] == "unlocked":
-            total_time = total_time + delta 
+            if delta < 500:
+                total_time = total_time + delta
             last_time = i["ts"]
             last_state = i["state"]
             pass
@@ -57,7 +60,6 @@ else:
 total_time = working_hours(data)
 
 print("Today worked: %s" % (time.strftime('%H:%M:%S', time.gmtime(total_time))))
-#os.system("polify --module working_hours \"Today worked: %s\"" % (time.strftime('%H:%M:%S', time.gmtime(total_time))))
 
 f = open(filename, 'wb')
 pickle.dump(data, f)
