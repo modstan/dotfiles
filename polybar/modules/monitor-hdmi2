@@ -30,7 +30,7 @@ font-2 = siji:pixelsize=10;1
 font-3 = Weather Icons:size=12;1
 font-4 = Font Awesome:size=12;1
 
-modules-left = i3 gmail-personal
+modules-left = i3
 modules-center = working_hours alsa now-playing
 modules-right = xkeyboard system-usb-mount date
 
