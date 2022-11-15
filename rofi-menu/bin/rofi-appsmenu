@@ -1,0 +1,1 @@
+rofi -show drun -config ~/dotfiles/rofi-menu/config.rasi -theme ~/dotfiles/rofi-menu/themes/appsmenu.rasi

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+python ~/dotfiles/rofi-menu/scripts/networkmenu.py
+
