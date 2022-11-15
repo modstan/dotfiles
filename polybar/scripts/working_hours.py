@@ -6,7 +6,7 @@ import os
 from datetime import datetime
 from datetime import date
 
-filename = "~/working_hours/%s.file" % date.today()
+filename = "/home/modestas/working_hours/%s.file" % date.today()
 
 def working_hours(data):
     total_time = 0
@@ -59,7 +59,7 @@ else:
 
 total_time = working_hours(data)
 
-print("Today worked: %s" % (time.strftime('%H:%M:%S', time.gmtime(total_time))))
+print("Tw: %s" % (time.strftime('%H:%M:%S', time.gmtime(total_time * 1))))
 
 f = open(filename, 'wb')
 pickle.dump(data, f)

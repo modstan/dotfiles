@@ -31,8 +31,8 @@ font-3 = Weather Icons:size=12;1
 font-4 = Font Awesome:size=12;1
 
 modules-left = i3
-modules-center = working_hours alsa now-playing
-modules-right = xkeyboard system-usb-mount date
+modules-center = alsa now-playing
+modules-right = xkeyboard date
 
 tray-position = right
 tray-padding = 2

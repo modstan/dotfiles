@@ -27,7 +27,7 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
 modules-left = i3
-modules-center = oras
+modules-center = working_hours 
 modules-right = filesystem memory cpu temperature date
 
 tray-position = none
